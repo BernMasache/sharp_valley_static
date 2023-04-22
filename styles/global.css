@@ -4,3 +4,11 @@
 .top-nav{
     background-color: rgb(202, 171, 104);
 }
+
+.tab-header.active{
+    border-bottom: solid 2px rgb(54, 44, 10);
+}
+
+.tab-data.active{
+    display: block;
+}

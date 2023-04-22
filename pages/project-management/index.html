@@ -10,6 +10,10 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/openNavs.js">
+
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -47,9 +51,8 @@
     </script>
     <title>Sharp Valley Holdings</title>
 </head>
-<script src="/js/openNavs.js">
 
-</script>
+
 
 <script>
     let setDate = document.getElementById("date-setup")
@@ -104,19 +107,21 @@
                     <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                         <div class="flow-root">
                             <a href="/index.html" class="-m-2 block p-2 font-medium text-gray-900">Home</a>
-                            <a href="/pages/partners/index.html" class="-m-2 block p-2 font-medium text-gray-900">Partners</a>
+                            <a href="/pages/partners/index.html"
+                                class="-m-2 block p-2 font-medium text-gray-900">Partners</a>
                             <a href="/pages/project-management/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Project
                                 Management</a>
                             <a href="/pages/travel/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Travel</a>
-                            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Technology
+                            <a href="/pages/technology-solutions/index.html"
+                                class="-m-2 block p-2 font-medium text-gray-900">Technology
                                 Solutions</a>
                             <a href="/pages/procurements/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Procurements</a>
                             <a href="/pages/about/index.html" class="-m-2 block p-2 font-medium text-gray-900">About</a>
-                            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Contacts</a>
-                            <a href="#" class="-m-2 block p-2 font-medium text-gray-900">News</a>
+                            <a href="" class="-m-2 block p-2 font-medium text-gray-900">Contacts</a>
+                            <a href="/pages/news/index.html" class="-m-2 block p-2 font-medium text-gray-900">News</a>
                         </div>
 
                     </div>
@@ -207,16 +212,16 @@
                                                     Management</a>
                                                 <a href="/pages/travel/index.html"
                                                     class="flex items-center text-sm font-medium text-white">Travel</a>
-                                                <a href="#"
+                                                <a href="/pages/technology-solutions/index.html"
                                                     class="flex items-center text-sm font-medium text-white">Technology
                                                     Solutions</a>
                                                 <a href="/pages/procurements/index.html"
                                                     class="flex items-center text-sm font-medium text-white">Procurements</a>
                                                 <a href="/pages/about/index.html"
                                                     class="flex items-center text-sm font-medium text-white">About</a>
-                                                <a href="#"
+                                                <a href=""
                                                     class="flex items-center text-sm font-medium text-white">Contacts</a>
-                                                <a href="#"
+                                                <a href="/pages/news/index.html"
                                                     class="flex items-center text-sm font-medium text-white">News</a>
                                             </div>
                                         </div>
@@ -318,32 +323,390 @@
                 <div class="flex flex-col items-start text-start mt-8">
                     <div>
                         <div class="sm:hidden">
-                          <select id="tabs" name="tabs" class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                            <option>500 Dwelling houses</option>
-                            <option>Nanjiri Lilongwe</option>
-                            <option selected>Natural Resource College Lilongwe</option>
-                            <option>Mpemba Blantyre</option>
-                          </select>
+                            <select id="tabs" name="tabs"
+                                class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                <option>500 Dwelling houses</option>
+                                <option>Nanjiri Lilongwe</option>
+                                <option selected>Natural Resource College Lilongwe</option>
+                                <option>Mpemba Blantyre</option>
+                            </select>
                         </div>
                         <div class="hidden sm:block">
-                          <div class="border-b border-gray-200">
-                            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                              <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                             <div class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" >500 Dwelling houses</div>
-                             <div class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium">Nanjiri Lilongwe</div>
-                             <div class="border-indigo-500 text-indigo-600 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" aria-current="page">Natural Resource College Lilongwe</div>
-                             <div class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium">Mpemba Blantyre</div>
-                            </nav>
+                            <div class="border-b border-gray-200">
+                                <nav class="-mb-px flex space-x-8 tabs-class" aria-label="Tabs">
+                                    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+                                    <div
+                                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium tab-header">
+                                        500 Dwelling houses</div>
+                                    <div
+                                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium tab-header">
+                                        Nanjiri Lilongwe</div>
+                                    <div
+                                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium tab-header">
+                                        Natural Resource College Lilongwe</div>
+                                    <div
+                                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium tab-header">
+                                        Mpemba Blantyre</div>
+                                </nav>
 
-                            <div class="">
+                                <div class="tab-data hidden active">
+                                    <div class="bg-white px-1 py-4 sm:py-4">
+                                        <div class="mx-auto max-w-7xl text-start">
+                                            <div>
+                                                <div class="px-4 sm:px-0">
+                                                    <h3 class="text-base font-semibold leading-7 text-gray-900">500
+                                                        Dwelling House</h3>
+                                                    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Blantyre,
+                                                        Lilongwe, and Mzuzu</p>
+                                                </div>
+                                                <div class="mt-6 border-t border-gray-100">
+                                                    <dl class="divide-y divide-gray-100">
 
+                                                        <div class="px-4 sm:px-0 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                                            <div class="">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Proposed Investment</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    Construction of dwelling units in blocks of Flats
+                                                                    with ancillary works</dd>
+
+                                                            </div>
+                                                            <div class="mt-4">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Estimated Cost</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    US$27,131,900 US dollars</dd>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="px-4 sm:px-0 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                                            <div class="mt-4">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Description</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    Sharp Valley Holdings LLC is developing affordable
+                                                                    housing nationwide.</dd>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="px-4 sm:px-0">
+                                                            <div
+                                                                class="px-4 py-6 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
+                                                                <dt
+                                                                    class="text-sm font-medium leading-6 text-gray-500 capitalize">
+                                                                    Related materials</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    <ul role="list"
+                                                                        class="divide-y divide-gray-100 rounded-md border border-gray-200">
+                                                                        <li
+                                                                            class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                                                            <div class="flex w-0 flex-1 items-center">
+                                                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-400"
+                                                                                    viewBox="0 0 20 20"
+                                                                                    fill="currentColor"
+                                                                                    aria-hidden="true">
+                                                                                    <path fill-rule="evenodd"
+                                                                                        d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                                                        clip-rule="evenodd" />
+                                                                                </svg>
+                                                                                <div
+                                                                                    class="ml-4 flex min-w-0 flex-1 gap-2">
+                                                                                    <span
+                                                                                        class="truncate font-medium">Image</span>
+                                                                                    <span
+                                                                                        class="sr-only flex-shrink-0 text-gray-400">2.4mb</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ml-4 flex-shrink-0">
+                                                                                <a href="#" target="_blank"
+                                                                                    class="font-medium text-indigo-600 hover:text-indigo-500">View</a>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                        </li>
+                                                                        
+                                                                    </ul>
+                                                                    <div
+                                                                        class="mt-4 sm:mt-4 xl:mx-auto xl:max-w-7xl xl:px-2">
+                                                                        <img src="/assets/images/project/materials/01-1024x683.png"
+                                                                            alt=""
+                                                                            class="aspect-[1/1] w-full object-contain xl:rounded-3xl">
+                                                                    </div>
+                                                                </dd>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-data hidden">
+                                    <div class="bg-white px-1 py-4 sm:py-4">
+                                        <div class="mx-auto max-w-7xl text-start">
+                                            <div>
+                                                <div class="px-4 sm:px-0">
+                                                    <h3 class="text-base font-semibold leading-7 text-gray-900">Nanjiri</h3>
+                                                    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Lilongwe</p>
+                                                </div>
+                                                <div class="mt-6 border-t border-gray-100">
+                                                    <dl class="divide-y divide-gray-100">
+
+                                                        <div class="px-4 sm:px-0 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                                            <div class="">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Description</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    Located between Bunda turnoff and Nanjiri</dd>
+
+                                                            </div>
+                                                        </div>
+
+                                       
+
+                                                        <div class="px-4 sm:px-0">
+                                                            <div
+                                                                class="px-4 py-6 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
+                                                                <dt
+                                                                    class="text-sm font-medium leading-6 text-gray-500 capitalize">
+                                                                    Related materials</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    <ul role="list"
+                                                                        class="divide-y divide-gray-100 rounded-md border border-gray-200">
+                                                                        <li
+                                                                            class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                                                            <div class="flex w-0 flex-1 items-center">
+                                                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-400"
+                                                                                    viewBox="0 0 20 20"
+                                                                                    fill="currentColor"
+                                                                                    aria-hidden="true">
+                                                                                    <path fill-rule="evenodd"
+                                                                                        d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                                                        clip-rule="evenodd" />
+                                                                                </svg>
+                                                                                <div
+                                                                                    class="ml-4 flex min-w-0 flex-1 gap-2">
+                                                                                    <span
+                                                                                        class="truncate font-medium">Image</span>
+                                                                                    <span
+                                                                                        class="sr-only flex-shrink-0 text-gray-400">2.4mb</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ml-4 flex-shrink-0">
+                                                                                <a href="#" target="_blank"
+                                                                                    class="font-medium text-indigo-600 hover:text-indigo-500">View</a>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                        </li>
+                                                                        
+                                                                    </ul>
+                                                                    <div
+                                                                        class="mt-4 sm:mt-4 xl:mx-auto xl:max-w-7xl xl:px-2">
+                                                                        <img src="/assets/images/project/materials/01-1024x683.png"
+                                                                            alt=""
+                                                                            class="aspect-[1/1] w-full object-contain xl:rounded-3xl">
+                                                                    </div>
+                                                                </dd>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-data hidden">
+                                    <div class="bg-white px-1 py-4 sm:py-4">
+                                        <div class="mx-auto max-w-7xl text-start">
+                                            <div>
+                                                <div class="px-4 sm:px-0">
+                                                    <h3 class="text-base font-semibold leading-7 text-gray-900">Natural Resource College Lilongwe</h3>
+                                                    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Lilongwe</p>
+                                                </div>
+                                                <div class="mt-6 border-t border-gray-100">
+                                                    <dl class="divide-y divide-gray-100">
+
+                                                        <div class="px-4 sm:px-0 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                                            <div class="">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Description</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    Plots</dd>
+
+                                                            </div>
+                                                        </div>
+
+                                       
+
+                                                        <div class="px-4 sm:px-0">
+                                                            <div
+                                                                class="px-4 py-6 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
+                                                                <dt
+                                                                    class="text-sm font-medium leading-6 text-gray-500 capitalize">
+                                                                    Related materials</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    <ul role="list"
+                                                                        class="divide-y divide-gray-100 rounded-md border border-gray-200">
+                                                                        <li
+                                                                            class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                                                            <div class="flex w-0 flex-1 items-center">
+                                                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-400"
+                                                                                    viewBox="0 0 20 20"
+                                                                                    fill="currentColor"
+                                                                                    aria-hidden="true">
+                                                                                    <path fill-rule="evenodd"
+                                                                                        d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                                                        clip-rule="evenodd" />
+                                                                                </svg>
+                                                                                <div
+                                                                                    class="ml-4 flex min-w-0 flex-1 gap-2">
+                                                                                    <span
+                                                                                        class="truncate font-medium">Image</span>
+                                                                                    <span
+                                                                                        class="sr-only flex-shrink-0 text-gray-400">2.4mb</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ml-4 flex-shrink-0">
+                                                                                <a href="#" target="_blank"
+                                                                                    class="font-medium text-indigo-600 hover:text-indigo-500">View</a>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                        </li>
+                                                                        
+                                                                    </ul>
+                                                                    <div
+                                                                        class="mt-4 sm:mt-4 xl:mx-auto xl:max-w-7xl xl:px-2">
+                                                                        <img src="/assets/images/project/materials/01-1024x683.png"
+                                                                            alt=""
+                                                                            class="aspect-[1/1] w-full object-contain xl:rounded-3xl">
+                                                                    </div>
+                                                                </dd>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-data hidden">
+                                    <div class="bg-white px-1 py-4 sm:py-4">
+                                        <div class="mx-auto max-w-7xl text-start">
+                                            <div>
+                                                <div class="px-4 sm:px-0">
+                                                    <h3 class="text-base font-semibold leading-7 text-gray-900">Mpemba </h3>
+                                                    <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Blantyre</p>
+                                                </div>
+                                                <div class="mt-6 border-t border-gray-100">
+                                                    <dl class="divide-y divide-gray-100">
+
+                                                        <div class="px-4 sm:px-0 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                                                            <div class="">
+
+                                                                <dt class="text-sm font-medium leading-6 text-gray-500">
+                                                                    Description</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm leading-6 text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    Plots</dd>
+
+                                                            </div>
+                                                        </div>
+
+                                       
+
+                                                        <div class="px-4 sm:px-0">
+                                                            <div
+                                                                class="px-4 py-6 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
+                                                                <dt
+                                                                    class="text-sm font-medium leading-6 text-gray-500 capitalize">
+                                                                    Related materials</dt>
+                                                                <dd
+                                                                    class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                                                    <ul role="list"
+                                                                        class="divide-y divide-gray-100 rounded-md border border-gray-200">
+                                                                        <li
+                                                                            class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                                                            <div class="flex w-0 flex-1 items-center">
+                                                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-400"
+                                                                                    viewBox="0 0 20 20"
+                                                                                    fill="currentColor"
+                                                                                    aria-hidden="true">
+                                                                                    <path fill-rule="evenodd"
+                                                                                        d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                                                        clip-rule="evenodd" />
+                                                                                </svg>
+                                                                                <div
+                                                                                    class="ml-4 flex min-w-0 flex-1 gap-2">
+                                                                                    <span
+                                                                                        class="truncate font-medium">Image</span>
+                                                                                    <span
+                                                                                        class="sr-only flex-shrink-0 text-gray-400">2.4mb</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ml-4 flex-shrink-0">
+                                                                                <a href="#" target="_blank"
+                                                                                    class="font-medium text-indigo-600 hover:text-indigo-500">View</a>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                        </li>
+                                                                        
+                                                                    </ul>
+                                                                    <div
+                                                                        class="mt-4 sm:mt-4 xl:mx-auto xl:max-w-7xl xl:px-2">
+                                                                        <img src="/assets/images/project/materials/01-1024x683.png"
+                                                                            alt=""
+                                                                            class="aspect-[1/1] w-full object-contain xl:rounded-3xl">
+                                                                    </div>
+                                                                </dd>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </dl>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
 
-                      
+
                 </div>
+
+
             </div>
 
 
@@ -407,8 +770,19 @@
 
 </body>
 
-<script src="/js/navs.js" type="javascript">
-    
+<script>
+    var tabHeaders = document.querySelectorAll(".tab-header")
+    var tabData = document.querySelectorAll(".tab-data")
+
+    tabHeaders.forEach((tab, index) => {
+        tab.addEventListener("click", (e) => {
+            tabHeaders.forEach(tab => { tab.classList.remove("active") })
+            tab.classList.add("active")
+            tabData.forEach(data => { data.classList.remove("active") })
+            tabData[index].classList.add("active")
+        })
+    })
+
 </script>
 
 </html>
