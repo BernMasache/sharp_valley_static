@@ -10,51 +10,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        transparent: 'transparent',
-                        primary: colors.blue,
-                        secondary: colors.red,
-                        success: colors.green,
-                        warning: colors.orange,
-                        danger: colors.red,
-                        info: colors.blue,
-                        black: colors.black,
-                        white: colors.white,
-                        gray: colors.gray,
-                        emerald: colors.emerald,
-                        indigo: colors.indigo,
-                        yellow: colors.yellow,
-                        slate: colors.slate,
-                        green: colors.green,
-                        sky: colors.sky,
-                        red: colors.red,
-                        orange: colors.orange,
-                        brown: rgb(54, 44, 10),
-                        sharp: "#25282a",
-                        store: "#2f2709",
-                        zinc: colors.zinc,
-                        gold: "#caab68",
-                        goldTwo: "#7b6031",
-                        goldThree: "#9c7d3c"
-                    },
-                }
-            }
-        }
-    </script>
+
     <title>Sharp Valley Holdings</title>
 </head>
-<script src="/js/openNavs.js">
-
-</script>
-
-<script>
-    let setDate = document.getElementById("date-setup")
-    setDate.innerHTML = ['Jan', 'Feb', 'March', 'April', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][new Date().getMonth()] + ", " + new Date().getDate() + " " + new Date().getFullYear()
-</script>
 
 <body>
 
@@ -64,7 +22,7 @@
   
       Off-canvas menu for mobile, show/hide based on off-canvas menu state.
     -->
-        <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+        <div id="open-menu" class="relative hidden md:hidden z-40 lg:hidden" role="dialog" aria-modal="true">
             <!--
         Off-canvas menu backdrop, show/hide based on off-canvas menu state.
   
@@ -77,7 +35,7 @@
       -->
             <div class="fixed inset-0 bg-black bg-opacity-25"></div>
 
-            <div class="fixed inset-0 z-40 flex">
+            <div class="fixed inset-0 z-40 flex ">
                 <!--
           Off-canvas menu, show/hide based on off-canvas menu state.
   
@@ -93,9 +51,10 @@
                         <button type="button"
                             class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
                             <span class="sr-only">Close menu</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            <svg id="close-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"
+                                     />
                             </svg>
                         </button>
                     </div>
@@ -106,14 +65,16 @@
                             <a href="/index.html" class="-m-2 block p-2 font-medium text-gray-900">Home</a>
                             <a href="/pages/partners/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Partners</a>
-                            <a href="/pages/project-management/index.html" class="-m-2 block p-2 font-medium text-gray-900">Project
+                            <a href="/pages/project-management/index.html"
+                                class="-m-2 block p-2 font-medium text-gray-900">Project
                                 Management</a>
                             <a href="/pages/travel/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Travel</a>
                             <a href="/pages/technology-solutions/index.html"
                                 class="-m-2 block p-2 font-medium text-gray-900">Technology
                                 Solutions</a>
-                            <a href="/pages/procurements/index.html" class="-m-2 block p-2 font-medium text-gray-900">Procurements</a>
+                            <a href="/pages/procurements/index.html"
+                                class="-m-2 block p-2 font-medium text-gray-900">Procurements</a>
                             <a href="/pages/about/index.html" class="-m-2 block p-2 font-medium text-gray-900">About</a>
                             <a href="" class="-m-2 block p-2 font-medium text-gray-900">Contacts</a>
                             <a href="/pages/news/index.html" class="-m-2 block p-2 font-medium text-gray-900">News</a>
@@ -122,10 +83,10 @@
                     </div>
 
                     <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-                        <!-- Currency selector -->
+
                         <form>
                             <div class="inline-block">
-                                <label for="mobile-currency" class="sr-only">Currency</label>
+                                <label for="mobile-currency" class="sr-only">website name</label>
                                 <div
                                     class="group relative -ml-2 rounded-md border-transparent focus-within:ring-2 focus-within:ring-white">
                                     <p>Sharp Valley</p>
@@ -226,10 +187,10 @@
                                         <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
                                         <button type="button" class="-ml-2 p-2 text-white">
                                             <span class="sr-only">Open menu</span>
-                                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                            <svg id="show-navs" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                                 stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"  />
                                             </svg>
                                         </button>
 
@@ -287,7 +248,7 @@
                         <div class="relative mx-auto max-w-2xl lg:mx-0">
                             <figure>
                                 <blockquote class="mt-6 font-semibold text-white sm:text-xl sm:leading-8">
-                                    <p class="text-5xl">Nesw section</p>
+                                    <p class="text-5xl">News section</p>
                                 </blockquote>
 
                             </figure>
@@ -306,11 +267,12 @@
                     </div>
                     <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
                         <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
-                          
-                            <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                <p>2018 Malawi Population and Housing Census
 
-                                </p>
+                            <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                <a href="http://www.nsomalawi.mw/images/stories/data_on_line/demography/census_2018/2018%20Population%20and%20Housing%20Census%20Preliminary%20Report.pdf"
+                                    target="_blank">2018 Malawi Population and Housing Census
+
+                                </a>
                             </blockquote>
                         </div>
                         <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
@@ -329,11 +291,12 @@
 
                     <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
                         <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
-                          
+
                             <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                <p>
+                                <a href="https://www.nyasatimes.com/sharp-valley-holdings-spread-christmas-cheers-childrens-ward-queens-hospital/"
+                                    target="_blank">
                                     Sharp Valley Spreads Christmas Cheer at QE2 Hospital Blantyre
-                                </p>
+                                </a>
                             </blockquote>
                         </div>
                         <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
@@ -351,11 +314,12 @@
 
                     <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10 mt-4">
                         <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
-                          
+
                             <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                <p>
+                                <a href="http://https/www.afdb.org/fileadmin/uploads/afdb/Documents/Publications/2019AEO/AEO_2019-EN.pdf"
+                                    target="_blank">
                                     African Economic Outlook 2019
-                                </p>
+                                </a>
                             </blockquote>
                         </div>
                         <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
@@ -369,11 +333,12 @@
 
                     <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
                         <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
-                          
+
                             <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                <p>
+                                <a href="https://www.cia.gov/library/publications/resources/the-world-factbook/geos/mi.html"
+                                    target="_blank">
                                     CIA The World Fact Book on Malawi
-                                </p>
+                                </a>
                             </blockquote>
                         </div>
                         <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
@@ -402,7 +367,7 @@
 
                 <div class="mt-8 pt-8 md:flex md:items-center md:justify-between">
                     <div class="flex space-x-6 md:order-2">
-                        <a href="#" class="text-gray-500 hover:text-gray-400">
+                        <a href="https://www.facebook.com/SharpValleyHolding" class="text-gray-500 hover:text-gray-400">
                             <span class="sr-only">Facebook</span>
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -410,7 +375,7 @@
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-400">
+                        <a href="https://www.instagram.com" class="text-gray-500 hover:text-gray-400">
                             <span class="sr-only">Instagram</span>
                             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -418,37 +383,33 @@
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-400">
-                            <span class="sr-only">Twitter</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-400">
-                            <span class="sr-only">GitHub</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-400">
-                            <span class="sr-only">YouTube</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
+
+
                     </div>
-                    <p class="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">&copy; 2020 Your Company, Inc.
-                        All rights reserved.</p>
+                    <p class="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">&copy;
+                        <span id="set-date"></span>
+
+                        Sharp Valley Holdings LLC, Inc. All rights reserved.
+                    </p>
                 </div>
             </div>
         </footer>
     </div>
 
 </body>
+<script>
+    let bar = document.getElementById("show-navs")
+    let menuItems = document.getElementById("open-menu")
+    let closeMenu = document.getElementById("close-menu")
+
+    bar.addEventListener('click', (e) => {
+        menuItems.classList.add("active")
+    })
+
+    closeMenu.addEventListener('click', (e) => {
+        menuItems.classList.remove("active")
+        // console.log("clicked");
+    })
+</script>
 
 </html>

@@ -12,3 +12,7 @@
 .tab-data.active{
     display: block;
 }
+
+#open-menu.active{
+    display: block;
+}
