@@ -1,6 +1,15 @@
 .nav-color{
     background-color: rgb(54, 44, 10);
 }
+.store{
+    background-color: #2f2709;
+}
+.brown{
+    background-color: #25282a;
+}
+.bg-color{
+    background: #25282a;
+}
 .top-nav{
     background-color: rgb(202, 171, 104);
 }
